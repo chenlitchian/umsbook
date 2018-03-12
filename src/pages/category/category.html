@@ -1,0 +1,122 @@
+
+<ion-header>
+
+
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+     <ion-searchbar (ionInput)="getItems($event)" placeholder="Search by Title, Author or ISBN"></ion-searchbar>
+
+<ion-buttons end>
+         <button ion-button icon-only (click)="arrangeBy()">
+            <ion-icon *ngIf="list" name="apps"></ion-icon><ion-icon *ngIf="grid" name="list"></ion-icon>
+         </button>
+</ion-buttons>
+
+
+</ion-navbar>
+      
+
+
+
+</ion-header>
+
+
+<ion-content style="background-color: #323232;">
+ 
+ <div *ngIf="showFilter" style="background-color: #285157;" class="categorysort">
+ 	<ion-row class="categorysort">
+    <ion-col col-6>
+     
+<ion-item color = "light">
+  <!--<ion-label stacked color="primary">Category</ion-label>-->
+  <ion-select [(ngModel)]="category" (ngModelChange)="filter()" placeholder="Select category">
+           <ion-option value = "All" selected="true">All Category</ion-option>
+          <ion-option value = "Accounting and Finance">Accounting and Finance</ion-option>
+          <ion-option value = "Art and Humanities">Art and Humanities</ion-option>
+          <ion-option value = "Business Studies">Business Studies</ion-option>
+          <ion-option value = "Biology">Biology</ion-option>
+          <ion-option value = "Chemistry">Chemistry</ion-option>
+          <ion-option value = "Communications and Media">Communications and Media</ion-option>
+          <ion-option value = "Computer Science">Computer Science</ion-option>
+          <ion-option value = "Economics">Economics</ion-option>
+          <ion-option value = "Education">Education</ion-option>
+          <ion-option value = "Engineering">Engineering</ion-option>
+          <ion-option value = "Foreign Languages">Foreign Languages</ion-option>
+          <ion-option value = "History">History</ion-option>
+          <ion-option value = "Hospitality and Tourism">Hospitality and Tourism</ion-option>
+          <ion-option value = "Management">Management</ion-option>
+          <ion-option value = "Mathematics">Mathematics</ion-option>
+          <ion-option value = "Music">Music</ion-option>
+          <ion-option value = "Physics">Physics</ion-option>
+          <ion-option value = "Psychology">Psychology</ion-option>
+          <ion-option value = "Science">Science</ion-option>
+          <ion-option value = "Others">Others</ion-option>
+  </ion-select>
+</ion-item>
+    </ion-col>
+    <ion-col col-6>
+      <ion-item color = "light">
+  <!--<ion-label stacked color="primary">Sort by:</ion-label>-->
+  <ion-select [(ngModel)]="sorting" (ngModelChange)="sort()" placeholder="Sort by">
+     <ion-option value = "1" selected="true">Title: A -> Z</ion-option>
+          <ion-option value = "2">Title: Z -> A</ion-option>
+           <ion-option value = "3">Price: Low to High</ion-option>
+          <ion-option value = "4">Price: High to Low</ion-option>
+          <ion-option value = "5">Newest</ion-option>
+          <ion-option value = "6">Oldest</ion-option>
+  </ion-select>
+</ion-item>
+    </ion-col>
+  </ion-row>
+ </div>
+
+
+
+ 
+ <div *ngIf="nobook"> 
+        <ion-item text-wrap>
+          <h2>Sorry, there are no results that match your search.</h2>
+        </ion-item>
+  </div>
+ 
+ <ion-list *ngIf="list">
+   <ion-item text-wrap *ngFor="let book of bookList" (click)='goToDetail(book)'>
+    <ion-thumbnail item-left>
+        <img src="{{book.photo}}">
+      </ion-thumbnail>
+     <h2 style="font-weight: bold">{{book.title}}</h2>
+     <ion-row>
+    <ion-col col-9>
+      <h6 style="font-weight: 200">{{book.author}}</h6>
+    </ion-col>
+    <ion-col col-3>
+      <ion-badge style="background-color: darkred; padding: 3px 3px; white-space: normal">RM {{book.price}}</ion-badge>
+    </ion-col>
+  </ion-row>
+    
+   </ion-item>
+ </ion-list>
+
+
+<ion-grid>
+ <ion-row wrap ion-list *ngIf="grid">
+        <ion-col col-6 class="ion-col" *ngFor="let book of bookList" (click)='goToDetail(book)'>    
+      
+         <ion-item text-wrap class = "image">
+            <img src="{{book.photo}}" width="100%"/>
+            <h2 style="font-weight: bold; text-align: right"><span>RM {{book.price}}</span></h2>
+            <h3 style="font-weight: bold"><span>{{book.title}}</span></h3>
+         </ion-item>
+      
+      </ion-col>
+      </ion-row>
+</ion-grid>
+
+<ion-fab right bottom>
+    <button ion-fab color="secondary" (click) = "toggleFilter()"><ion-icon name="options"></ion-icon></button>
+    </ion-fab>
+
+</ion-content>

@@ -1,0 +1,33 @@
+
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Feedback</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <h3></h3>
+
+
+  <ion-item text-wrap>
+   <p style="color: #285157"><strong>What do you think of UMSBook?}</strong></p>
+  </ion-item>
+
+    <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit(feedbackForm.value)" action = "mailto:tolenashley7@gmail.com?Subject=YumHack%20Feedback">
+     
+        <ion-item>
+            <ion-label floating><h3 style="text-align: left">Feedback</h3></ion-label>
+            <ion-textarea rows="10" formControlName="feedback" typeof="text"></ion-textarea>
+        </ion-item>
+    
+    <ion-fab right bottom>
+    <button ion-fab color="secondary" formtarget="_top" type="submit"><ion-icon name="checkmark-circle-outline"></ion-icon></button>
+    </ion-fab>
+
+       
+    </form>
+
+</ion-content>

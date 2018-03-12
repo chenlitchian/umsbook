@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="ToWishlist()">
+        <ion-icon name="star"></ion-icon>
+      </button>
+    </ion-buttons>
+
+	<!--	<ion-buttons end>
+      <button ion-button icon-only [navPush]="Inbox">
+        <ion-icon name="chatboxes"><ion-badge *ngIf="noti" id="notifications-badge"  item-right color="danger">!</ion-badge></ion-icon>
+      </button>
+    </ion-buttons> -->
+
+
+		<ion-buttons end>
+      <button ion-button icon-only (click)="ToInbox()">
+        <ion-icon name="chatboxes"><ion-badge *ngIf="noti" id="notifications-badge"  item-right color="danger">!</ion-badge></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+ <ion-content style="background-color: #323232;">
+
+
+
+<!--><ion-card style="background-color: white">-->
+
+<img src="img/bgums.jpg" imageViewer style="margin: auto; margin-top: 10%; width: 100%; "/>
+
+<!--</ion-card>-->
+
+<ion-title style="padding: 2%; color: white">New</ion-title>
+   
+						<ion-scroll scrollX="true" class="item">
+								<ion-row nowrap>
+									<ion-col col-5 class="column" *ngFor="let book of bookList | slice:0:10; let i=index"  (click)='goToDetail(book)'>    
+            <img src="{{book.photo}}" width="100%"/>
+            <p class="wording" style="font-weight: bold; word-wrap: break-word;">{{book.title}}</p>      
+            <p class="wording" style="font-weight: lighter"><span>RM {{book.price}}</span></p>
+      </ion-col>
+								</ion-row>
+						</ion-scroll>
+
+        </ion-content>

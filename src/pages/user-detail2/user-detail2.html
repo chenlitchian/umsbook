@@ -1,0 +1,137 @@
+<!--
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>User Profile</ion-title>
+
+	<ion-buttons end>
+      <button ion-button icon-only (click)="redirectToHomePage()">
+        	<ion-icon name="settings"></ion-icon>
+  		</button>
+	</ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background-color: #323232;">
+
+
+<ion-row class="header">
+    <ion-col>
+        <img class="img-center" src="{{ (user | async)?.photo }}" style="border-radius: 150px; height:200px; width: 200px;" on-tap="presentActionSheet()"/>
+    </ion-col>
+</ion-row>
+
+
+<ion-card  style="background-color: white">
+	<ion-card-header text-uppercase>
+		   My details 
+	</ion-card-header>
+	
+	 <ion-list>
+
+		 
+     <ion-item text-wrap>
+     	 <ion-icon name="person" item-left></ion-icon>{{userName}}
+	 	</ion-item>
+
+	 	<ion-item text-wrap>
+	 		 <ion-icon name="mail" item-left></ion-icon>{{userEmail }}
+	 	</ion-item>
+	 
+	 	<ion-item text-wrap>
+	 		 <ion-icon name="call" item-left></ion-icon>{{ userContact }}
+	 	</ion-item>
+	  
+	 	<ion-item text-wrap>
+	 		 <ion-icon name="school" item-left></ion-icon>{{ userSchool }} 
+	 	</ion-item> 
+
+	 </ion-list>
+</ion-card>
+
+<ion-fab right bottom>
+    <button ion-fab color="secondary"><ion-icon name="create"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button ion-fab color="primary" (click) ="openModal()"><ion-icon name="create"></ion-icon></button>
+      <button ion-fab color="secondary" (click) ="presentActionSheet()"><ion-icon name="images"></ion-icon></button>
+      <button ion-fab color="danger" (click) = "presentPrompt()"><ion-icon name="trash"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>
+
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>User Profile</ion-title>
+
+	<ion-buttons end>
+      <button ion-button icon-only (click)="redirectToHomePage()">
+        	<ion-icon name="settings"></ion-icon>
+  		</button>
+	</ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class="transparent-header"  style="background-color: #323232;">
+  <div id="profile-bg" [ngStyle]="{'background-image': 'url(' + photo + ')'}"></div>
+  <div id="content">
+    <div id="profile-info" padding>
+      <img id="profile-image" src="{{userPhotoUrl}}">
+      <h3 id="profile-name">{{user.name}}</h3>
+      <p>{{user.occupation}} &bull; {{user.location}}</p>
+      <p class="profile-description">{{user.description}}</p>
+     
+		 </div>
+  </div>
+
+<hr>
+
+<ion-card  style="background-color: white">
+	<ion-card-header text-uppercase>
+		   My details 
+	</ion-card-header>
+	
+	 <ion-list>
+
+		 
+     <ion-item text-wrap>
+     	 <ion-icon name="person" item-left></ion-icon>{{userName}}
+	 	</ion-item>
+
+	 	<ion-item text-wrap>
+	 		 <ion-icon name="mail" item-left></ion-icon>{{userEmail }}
+	 	</ion-item>
+	 
+	 	<ion-item text-wrap>
+	 		 <ion-icon name="call" item-left></ion-icon>{{ userContact }}
+	 	</ion-item>
+	  
+	 	<ion-item text-wrap>
+	 		 <ion-icon name="school" item-left></ion-icon>{{ userSchool }} 
+	 	</ion-item> 
+
+	 </ion-list>
+</ion-card>
+
+<ion-fab right bottom>
+    <button ion-fab color="secondary"><ion-icon name="create"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button ion-fab color="primary" (click) ="openModal()"><ion-icon name="create"></ion-icon></button>
+      <button ion-fab color="secondary" (click) ="presentActionSheet()"><ion-icon name="images"></ion-icon></button>
+      <button ion-fab color="danger" (click) = "presentPrompt()"><ion-icon name="trash"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

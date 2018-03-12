@@ -1,0 +1,63 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>My Wishlist</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="background-color: #323232;">
+
+  <ion-item text-wrap>
+    <p style="color: #285157"><strong>{{message}}</strong></p>
+  </ion-item>
+
+
+      <!--  
+           <ion-row wrap>
+        <ion-col width-50 class="ion-col" *ngFor="let book of books | async" (click)='goToDetail(book)'>    
+      
+
+         <ion-item class = "bookimage">
+            <img src="{{book.photo}}" width="100%"/>
+         </ion-item>
+        <ion-item text-wrap>
+            <h2>{{book.title}}</h2> 
+         </ion-item>
+
+
+      </ion-col>
+      </ion-row> -->
+
+      <ion-list>
+    <ion-item *ngFor="let book of books | async" text-wrap (click)='goToBookDetail(book.$key)'>
+      <ion-thumbnail item-left>
+        <img src="{{book.photo}}">
+      </ion-thumbnail>
+      <h2 style="font-weight: bold">{{book.title}}</h2>
+      <ion-badge style="background-color: darkred; padding: 3px 3px; white-space: normal">RM {{book.price}}</ion-badge>
+     <!-- <button ion-button outline color='danger' item-right (click)='remove(book.$key)'>remove</button> -->
+      <button ion-button color="danger" item-right clear icon-only (click)='remove(book.$key)'>
+      <ion-icon name='trash' is-active="false"></ion-icon>
+    </button>
+    </ion-item>
+  </ion-list>
+
+<!--
+ <ion-row wrap>
+        <ion-col width-25 class="ion-col" *ngFor="let book of books | async" (click)='goToDetail(book)'>    
+  <div class="card">
+  <div class="item item-image">
+    <img src="{{book.photo}}" width="100%"/>
+    </div>
+    <div class="item">
+      {{book.title}}
+      </div>
+  </div>
+ </ion-col>
+      </ion-row>
+
+      -->
+</ion-content>

@@ -1,0 +1,70 @@
+.ios, .md {
+page-home {
+
+#notifications-badge {
+         position: fixed;
+    border-radius: 100%;
+    top: -3px;
+    right: -3px;
+        }
+
+.notis{
+    position: fixed;
+    border-radius: 100%;
+    top: -3px;
+    right: -3px;
+}
+.toolbar-title{
+
+    color: white;
+}
+.bar-buttons-md[end] {
+ 
+    margin: 1%;
+}
+
+img{
+    width: 100%;
+}
+
+scroll-content{
+	background-color: rgb(41, 221, 171);
+}
+
+ion-scroll.item{
+	height: 50%;
+}
+
+ion-col{
+	padding: 0px;
+	border: solid 1px #000000;
+   
+	background-color: #ffffff;
+	color: #000000;
+	border-radius: 0px;
+	margin: 2%;
+}
+.titleslide{
+    padding: 4px;
+}
+.column{
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.col{
+    margin: 2%;
+}
+
+.wording{
+
+    padding: 0px;
+    padding-left: 4px;
+    margin: 0px;
+    line-height: 1.5em;
+    height: 3em;       /* height is 2x line-height, so two lines will display */
+    overflow: hidden;
+}
+}
+}

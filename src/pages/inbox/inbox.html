@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Inbox</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding style="background-color: #323232;">
+	
+    
+    <ion-item no-lines class="message" [class.left]=" message.new === true "
+         [class.right]=" message.new === false " *ngFor="let message of messagesList" (click)='goToChatbox(message.chatId, message.user, message.key)'>
+      <ion-avatar item-left>
+        <img src="{{message.photo}}" onerror="this.src='img/userpic.png'" />
+      </ion-avatar>
+			<h3 style="font-weight: 900">{{message.user}}</h3>
+      <p>
+      <span class="message" [class.left]=" message.new === true "
+         [class.right]=" message.new === false " style="float: left">{{message.message}}</span>
+  <span style="float: right">{{message.date | date:'h:mma MM/dd/yyyy'}}</span>
+      </p>
+    </ion-item>
+	
+</ion-content>

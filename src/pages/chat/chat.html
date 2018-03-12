@@ -1,0 +1,50 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Chat with {{username2}}
+    </ion-title>
+
+    <!--<ion-buttons end>
+         <button ion-button icon-only (click)="toBottom()">
+            <ion-icon name="apps"></ion-icon>
+         </button>
+</ion-buttons> -->
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background-color: #323232;">
+	
+	<!--	<ion-item style="background-color: #323232;" text-wrap *ngFor="let message of messagesList" class="message" [class.left]=" message.userId === user2Id "
+         [class.right]=" message.userId === userId ">
+           
+			<h3>{{message.name}}</h3>
+			<p class="msg-content">{{message.message}}</p>
+      <p style="text-align:left;">
+{{message.message}}
+<span style="float:right;">{{message.date | date:'medium'}}</span>
+</p>
+		</ion-item> -->
+
+
+   	<ion-item no-lines text-wrap *ngFor="let message of messagesList" style="background-color:#323232" class="message" [class.left]=" message.userId === user2Id "
+         [class.right]=" message.userId === userId ">
+    
+     <!--<h2 style="font-weight: bold">{{message.name}}</h2>-->
+      <ion-badge style="background-color: #d3d3d3; padding: 5px 5px 5px 5px; white-space: normal; text-align:left" class="ddd" [class.left]=" message.userId === user2Id "
+         [class.right]=" message.userId === userId "><p style="font-size:1em; font-weight:900; color:black; padding:0%">{{message.message}}</p><br><p style="font-size:1em; font-weight:200; color:black; padding:0%">{{message.date | date:'h:mma MM/dd/yyyy'}}</p></ion-badge>
+      <!--<ion-badge style="background-color: darkred; padding: 3px 3px; white-space: normal">{{message.date | date:'medium'}}</ion-badge>-->
+    
+   </ion-item>
+
+
+</ion-content>
+
+
+<ion-footer>
+	<ion-item>
+		<ion-input type="text" placeholder="type here..." [(ngModel)]="newmessage" (ngModelChange)="f()" on-tap="f()"></ion-input>
+		<button ion-button clear item-right (click)="postMessage()">Send</button>
+	</ion-item>
+</ion-footer>

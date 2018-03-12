@@ -1,0 +1,52 @@
+<!--
+  <ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar color="secondary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+      
+      <button menuClose ion-item (click)="open(1)"><ion-icon name="search" item-right></ion-icon>Search</button>
+      <button menuClose ion-item (click)="open(3)"><ion-icon name="person" item-right></ion-icon>Account</button>
+      <button menuClose ion-item (click)="open(2)"><ion-icon name="cart" item-right></ion-icon>Sell</button>
+      <button menuClose ion-item (click)="setting()"><ion-icon name="settings" item-right></ion-icon>Setting</button>
+      <button menuClose ion-item (click)="logOut()"><ion-icon name="log-out" item-right></ion-icon>LogOut</button>
+
+    </ion-list>
+  </ion-content> -->
+
+ <ion-menu [content]="content" id="menu-material">
+   
+      <ion-header class="menu-header">
+        <!--material-design-background-->
+      <!--  <img class="user-avatar round" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"/>-->
+     <!--   <img class="user-avatar round" src="img/userpic.png"/>-->
+        <img class="user-avatar round" src="{{photoURL}}"/>
+        <p><span>{{name}}</span></p>
+        <p><span>{{email}}</span></p>
+      </ion-header>
+      
+         <ion-content>
+      <ion-list>
+        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+        <button menuClose ion-item (click)="open(1)"><ion-icon name="search" item-right></ion-icon>Search</button>
+      <button menuClose ion-item (click)="open(3)"><ion-icon name="person" item-right></ion-icon>Account</button>
+      <button menuClose ion-item (click)="open(2)"><ion-icon name="cart" item-right></ion-icon>Sell</button>
+      <button menuClose ion-item (click)="setting()"><ion-icon name="settings" item-right></ion-icon>Setting</button>
+      <button menuClose ion-item (click)="logOut()"><ion-icon name="log-out" item-right></ion-icon>LogOut</button>
+      </ion-list>
+      
+    </ion-content>
+  </ion-menu>
+
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

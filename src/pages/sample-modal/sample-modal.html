@@ -1,0 +1,85 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Edit Book</ion-title>
+    	<ion-buttons start>
+      <button ion-button icon-only (click)="returnToBookDetailPage()">
+        	<ion-icon name="close"></ion-icon>
+  		</button>
+	</ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<ion-card>
+    <ion-item>
+        <ion-label stacked color="primary">Status</ion-label>
+        <ion-select name="status" placeholder ="{{status}}" [(ngModel)]="statusField" required>
+          <ion-option value = "available">Available</ion-option>
+          <ion-option value = "reserved">Reserved</ion-option>
+        </ion-select>
+      </ion-item>
+    
+
+    <ion-item>
+      <ion-label stacked color="primary">Title</ion-label>
+      <ion-input  placeholder ="{{title}}" type="text" name="title" [(ngModel)]="titleField" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Author</ion-label>
+      <ion-input  placeholder ="{{author}}" type="text" name="author" [(ngModel)]="authorField" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Price</ion-label>
+      <ion-input  placeholder ="{{price}}" type="number" name="price" [(ngModel)]="priceField" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked color="primary">Isbn</ion-label>
+      <ion-input  placeholder ="{{isbn}}" type="number" name="isbn" [(ngModel)]="isbnField" required></ion-input>
+    </ion-item>
+   
+    <ion-item>
+        <ion-label stacked color="primary">Category</ion-label>
+        <ion-select name="category" placeholder ="{{category}}" [(ngModel)]="categoryField" required>
+          <ion-option value = "Accounting and Finance">Accounting and Finance</ion-option>
+          <ion-option value = "Art and Humanities">Art and Humanities</ion-option>
+          <ion-option value = "Business Studies">Business Studies</ion-option>
+          <ion-option value = "Biology">Biology</ion-option>
+          <ion-option value = "Chemistry">Chemistry</ion-option>
+          <ion-option value = "Communications and Media">Communications and Media</ion-option>
+          <ion-option value = "Computer Science">Computer Science</ion-option>
+          <ion-option value = "Economics">Economics</ion-option>
+          <ion-option value = "Education">Education</ion-option>
+          <ion-option value = "Engineering">Engineering</ion-option>
+          <ion-option value = "Foreign Languages">Foreign Languages</ion-option>
+          <ion-option value = "History">History</ion-option>
+          <ion-option value = "Hospitality and Tourism">Hospitality and Tourism</ion-option>
+          <ion-option value = "Management">Management</ion-option>
+          <ion-option value = "Mathematics">Mathematics</ion-option>
+          <ion-option value = "Music">Music</ion-option>
+          <ion-option value = "Physics">Physics</ion-option>
+          <ion-option value = "Psychology">Psychology</ion-option>
+          <ion-option value = "Science">Science</ion-option>
+          <ion-option value = "Others">Others</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked color="primary">Details</ion-label>
+        <ion-textarea rows="10" type="text" maxlength="1000" name="detail" [(ngModel)]="detailField" required></ion-textarea>
+      </ion-item>
+
+</ion-card>
+
+ <ion-fab right bottom>
+    <button ion-fab color="secondary" (click) = "closeModal()"><ion-icon name="checkmark-circle-outline"></ion-icon></button>
+    </ion-fab>
+
+</ion-content>
+

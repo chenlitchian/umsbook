@@ -1,0 +1,73 @@
+
+<ion-header>
+
+
+  <ion-navbar color="primary">
+    <ion-title>Edit Profile</ion-title>
+    	<ion-buttons start>
+      <button ion-button icon-only (click)="returnToUserDetailPage()">
+        	<ion-icon name="close"></ion-icon>
+  		</button>
+	</ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+
+<form novalidate>
+
+<ion-list>
+    <ion-item>
+      <ion-label stacked>Name</ion-label>
+      <ion-input type="text" name="name" [(ngModel)]="nameField" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input type="email" name="email" [(ngModel)]="emailField" required></ion-input>
+    </ion-item>
+ 
+    <ion-item>
+      <ion-label stacked>Contact No</ion-label>
+      <ion-input type="number" name="contact" [(ngModel)]="contactField" required></ion-input>
+    </ion-item>
+
+    
+    <ion-item>
+        <ion-label stacked>School</ion-label>
+        <ion-select okText="Ok" cancelText="Cancel" name="school" [(ngModel)]="schoolField" required>
+          <ion-option value = "Faculty of Business, Economics And Accountancy">Faculty of Business, Economics And Accountancy</ion-option>
+          <ion-option value ="Faculty Of Computing And Informatics">Faculty Of Computing And Informatics</ion-option>
+          <ion-option value ="Faculty Of Engineering">Faculty Of Engineering</ion-option>
+          <ion-option value ="Faculty Of Food Science And Nutrition">Faculty Of Food Science And Nutrition</ion-option>
+          <ion-option value ="Faculty Of Humanities, Arts And Heritage">Faculty Of Humanities, Arts And Heritage</ion-option>
+          <ion-option value ="Faculty Of Medicine And Health Science">Faculty Of Medicine And Health Science</ion-option>
+          <ion-option value ="Faculty Of Psychology And Education">Faculty Of Psychology And Education</ion-option>
+          <ion-option value ="Faculty Of Science And Natural Resources">Faculty Of Science And Natural Resources</ion-option>
+          <ion-option value ="Faculty Of Sustainable Agriculture">Faculty Of Sustainable Agriculture</ion-option>
+          <ion-option value ="Labuan Faculty Of International Finance">Labuan Faculty Of International Finance</ion-option>
+        </ion-select>
+      </ion-item>
+
+<!--    <ion-item>
+      <ion-label stacked>Password</ion-label>
+      <ion-input type="password" name="password" [(ngModel)]="passwordField" required></ion-input>
+    </ion-item> -->
+ 
+
+</ion-list>
+ 
+</form>
+
+</ion-content>
+
+<ion-footer no-border>
+  <ion-toolbar color="background">
+    <button ion-button full round color ="primary" icon-left item-right (click) = "presentPrompt()">
+	 		<ion-icon item-left name="checkmark-circle-outline"></ion-icon>Save
+	 	</button>
+  </ion-toolbar>
+</ion-footer>

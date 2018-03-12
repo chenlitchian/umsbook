@@ -1,0 +1,56 @@
+page-chat {
+
+
+ion-item {
+            width: 98%;
+            margin: 1%;
+            padding-left: 10px !important;
+           // margin-bottom: 10px;
+            background-color: #fff;
+            opacity: 1.0;
+            font-size: 0.9em;
+            transition: 0.2s linear;
+        }
+        
+  .message.left{
+    text-align: left;
+      /*.msg-content{
+        span.triangle{
+          border-top-width: 0;
+          border-right-width: 0;
+          left: -5px;
+          top: 12px;
+        }
+      }*/
+
+    }
+
+    .message.right{
+       text-align: right;
+     /* .msg-content{
+        span.triangle{
+          background-color: #000;
+          border-bottom-width: 0;
+          border-left-width: 0;
+          right: -5px;
+          top: 12px;
+        }
+      }*/
+
+    }
+ 
+ .ddd.left{
+background-color: #d3d3d3 !important
+
+ }
+ .ddd.right{
+background-color: lightblue !important
+
+ }
+
+ .label-md {
+    margin: 5px 5px 5px 0;
+}
+
+
+}

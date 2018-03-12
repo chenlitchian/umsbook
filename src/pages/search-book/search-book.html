@@ -1,0 +1,49 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="Search by Book Title" autocomplete="on"></ion-searchbar>
+  
+    <ion-buttons end>
+         <button ion-button icon-only (click)="presentActionSheet()">
+            <ion-icon name="more"></ion-icon>
+         </button>
+      </ion-buttons>
+  
+ 
+</ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content>
+       
+ <div *ngIf="nobook">
+        <ion-item text-wrap>
+          <h2>Sorry, there are no results that match your search.</h2>
+        </ion-item>
+    </div>
+ 
+ <ion-list>
+   <ion-item text-wrap *ngFor="let book of bookList" (click)='goToDetail(book)'>
+
+     <h2>{{book.title}}</h2>
+    
+   </ion-item>
+ </ion-list>
+
+
+</ion-content>
+
+<!--
+<ion-footer no-border>
+  <ion-toolbar color="primary">
+    <button ion-button full icon-left item-right color="secondary" (click) = "presentActionSheet()">
+	 		<ion-icon item-left name="search"></ion-icon>Advanced Search
+	 	</button> 
+  </ion-toolbar>
+</ion-footer>  -->

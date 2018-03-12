@@ -1,0 +1,38 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="Search by Book Title"></ion-searchbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content>
+       
+ <div *ngIf="searching" class="spinner-container">
+        <ion-spinner></ion-spinner>
+    </div>
+ 
+ <ion-list>
+   <ion-item text-wrap *ngFor="let snap of bookList" (click)='goToDetail(snap)'>
+
+     <h2>{{snap.title}}</h2>
+    
+   </ion-item>
+ </ion-list>
+
+<button ion-button full icon-left item-right color="secondary" (click) = "presentActionSheet()"><ion-icon item-left name="search"></ion-icon>Advanced Search
+	 	</button>
+
+<ion-list>
+   <ion-item text-wrap *ngFor="let snap of loadedBookList" (click)='goToDetail(snap)'>
+
+     <h2>{{snap.title}}</h2>
+    
+   </ion-item>
+ </ion-list>
+
+</ion-content>
+

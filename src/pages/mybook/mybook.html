@@ -1,0 +1,94 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Book Detail </ion-title>
+    	<ion-buttons end>
+      <button ion-button icon-only (click)="presentEditActionSheet()">
+        	<ion-icon name="more"></ion-icon>
+  		</button>
+	</ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background-color: #323232;">
+
+<ion-card style="background-color: white">
+	<ion-card-title text-center>
+		   <strong>{{ title | uppercase}}</strong>
+	</ion-card-title>
+
+
+<img src="{{photo}}" imageViewer style="margin: auto; margin-top:10px; margin-bottom: 20px; height:200px; width: 200px; "/>
+	
+	
+	
+
+	<ion-grid>
+  
+	<ion-row>
+    <ion-col col-3> 
+      Status:
+    </ion-col>
+    <ion-col col-9>
+      <strong>{{status}}</strong>
+    </ion-col>
+  </ion-row>
+
+	<ion-row>
+    <ion-col col-3>
+      Price:
+    </ion-col>
+    <ion-col col-9>
+     <strong>RM {{price}}</strong>
+    </ion-col>
+  </ion-row>
+
+	<ion-row>
+    <ion-col col-3>
+      ISBN:
+    </ion-col>
+    <ion-col col-9>
+     <strong>{{isbn}}</strong>
+    </ion-col>
+  </ion-row>
+
+	<ion-row>
+    <ion-col col-3>
+     Author:
+    </ion-col>
+    <ion-col col-9>
+     <strong>{{author}}</strong>
+    </ion-col>
+  </ion-row>
+
+	<ion-row>
+    <ion-col col-3>
+      Category:
+    </ion-col>
+    <ion-col col-9>
+      <strong>{{category}}</strong>
+    </ion-col>
+  </ion-row>
+
+<ion-row>
+  <ion-label stacked color="primary">Details</ion-label>
+  <ion-item text-wrap class="detail">
+      {{detail}}
+      </ion-item>
+</ion-row>
+
+</ion-grid>
+</ion-card>
+    <ion-fab right bottom>
+    <button ion-fab color="secondary"><ion-icon name="create"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button ion-fab color="primary" (click) ="openModal()"><ion-icon name="create"></ion-icon></button>
+      <button ion-fab color="secondary" (click) ="presentdEditphotoActionSheet()"><ion-icon name="images"></ion-icon></button>
+      <button ion-fab color="danger" (click) = "removeMyBook()"><ion-icon name="trash"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>

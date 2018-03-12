@@ -1,0 +1,46 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Sell Book</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content style="background-color: #323232;">
+
+
+  <ion-item text-wrap>
+   <p style="color: #285157"><strong>{{message}}</strong></p>
+  </ion-item>
+
+ <ion-list style="padding-bottom:10px ">
+   
+   <ion-item text-wrap *ngFor="let book of mybookList" (click)='goToBookDetail(book)'>
+
+    <ion-thumbnail item-left>
+      <img src="{{book?.photo}}">
+    </ion-thumbnail>
+     
+     <h2 style="font-weight: bold">{{book?.title}}</h2>
+    
+      <h6 style="font-weight: 200;">{{ book?.postedon | date :'short'}}</h6>
+      <!--<h6 style="color:blue; text-align: right; font-weight: bold">RM {{book.price }}</h6>-->
+      <ion-badge item-right style="background-color: darkred; padding: 3px 3px; white-space: normal">RM {{book.price}}</ion-badge>
+       
+    
+   </ion-item>
+ </ion-list>
+
+    <ion-fab right bottom>
+    <button ion-fab color="secondary" (click) = "toAddBookPage()"><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
+
+</ion-content>
+
+

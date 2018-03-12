@@ -1,0 +1,67 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Setting</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<ion-list>
+
+  <ion-item>
+      <ion-icon name="notifications" item-left color="danger"></ion-icon>
+      <ion-label>Notification</ion-label>
+      <ion-toggle color="secondary"></ion-toggle>
+    </ion-item>
+
+ <button ion-item (click)="openHintModal()">
+    <ion-icon name="star" item-left></ion-icon>
+    About Us
+  </button>
+
+ <button ion-item (click)="pushToFeedback()">
+    <ion-icon name="star" item-left></ion-icon>
+    Feedback
+  </button>
+   
+    <button ion-item (click)="openHintModal()">
+    <ion-icon name="star" item-left></ion-icon>
+    Privacy Policy
+  </button>
+  
+  <button ion-item (click)="openHintModal()">
+    <ion-icon name="star" item-left></ion-icon>
+    Term of Service
+  </button>
+
+  <button ion-item (click)="openHintModal()">
+    <ion-icon name="star" item-left></ion-icon>
+    Version
+  </button>
+
+  <button ion-item (click)="openHintModal()">
+    <ion-icon name="star" item-left></ion-icon>
+    Tutorial
+  </button>
+
+   <button ion-item (click)="updatePassword()">
+    <ion-icon name="star" item-left></ion-icon>
+    Change Password
+  </button>
+
+<ion-item>
+  <ion-icon name="call" item-left color="danger"></ion-icon>
+    <ion-label>Show Contact</ion-label>
+    <ion-toggle [(ngModel)]="pep" (ngModelChange)="show()"></ion-toggle>
+  </ion-item>
+  
+<button ion-item (click)="logUserOut()">
+    <ion-icon name="log-out" item-left></ion-icon>
+    Log Out
+  </button>
+
+</ion-list>

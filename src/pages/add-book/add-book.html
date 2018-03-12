@@ -1,0 +1,79 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Add Book</ion-title>
+     <ion-buttons end>
+     <a ion-button icon-only navPop>
+      <ion-icon name="close"></ion-icon>
+    </a>
+    </ion-buttons> 
+  </ion-navbar>
+
+   
+
+</ion-header>
+
+<ion-content>
+ 
+ <ion-card>
+<ion-list>
+   
+      <ion-item>
+        <ion-label stacked color="primary">Book Title</ion-label>
+        <ion-input type="text" placeholder="Book Title"  name="title" [(ngModel)]="booktitleField" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked color="primary">Book Author</ion-label>
+        <ion-input type="text" placeholder="Book Author" name="author" [(ngModel)]="bookauthorField" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked color="primary">ISBN</ion-label>
+        <ion-input type="number" placeholder="Book ISBN" name="isbn" [(ngModel)]="bookisbnField" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked color="primary">Price</ion-label>
+        <ion-input type="number" placeholder="Book Price" name="price" [(ngModel)]="bookpriceField" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked color="primary">Category</ion-label>
+        <ion-select name="category" [(ngModel)]="bookcategoryField" required>
+          <ion-option value = "Accounting and Finance">Accounting and Finance</ion-option>
+          <ion-option value = "Art and Humanities">Art and Humanities</ion-option>
+          <ion-option value = "Business Studies">Business Studies</ion-option>
+          <ion-option value = "Biology">Biology</ion-option>
+          <ion-option value = "Chemistry">Chemistry</ion-option>
+          <ion-option value = "Communications and Media">Communications and Media</ion-option>
+          <ion-option value = "Computer Science">Computer Science</ion-option>
+          <ion-option value = "Economics">Economics</ion-option>
+          <ion-option value = "Education">Education</ion-option>
+          <ion-option value = "Engineering">Engineering</ion-option>
+          <ion-option value = "Foreign Languages">Foreign Languages</ion-option>
+          <ion-option value = "History">History</ion-option>
+          <ion-option value = "Hospitality and Tourism">Hospitality and Tourism</ion-option>
+          <ion-option value = "Management">Management</ion-option>
+          <ion-option value = "Mathematics">Mathematics</ion-option>
+          <ion-option value = "Music">Music</ion-option>
+          <ion-option value = "Physics">Physics</ion-option>
+          <ion-option value = "Psychology">Psychology</ion-option>
+          <ion-option value = "Science">Science</ion-option>
+          <ion-option value = "Others">Others</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked color="primary">Details</ion-label>
+        <ion-textarea rows="10" type="text" maxlength="1000" placeholder="Details" name="about" [(ngModel)]="bookdetailField" required></ion-textarea>
+      </ion-item>
+    </ion-list>
+
+ </ion-card>
+
+<ion-fab right bottom>
+    <button ion-fab color="secondary" (click) = "addBook()"><ion-icon name="checkmark-circle-outline"></ion-icon></button>
+    </ion-fab>
+
+
+
+</ion-content>
+
+  

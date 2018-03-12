@@ -1,0 +1,8 @@
+{
+  "name": "umsbook 1mar",
+  "app_id": "55918b70",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

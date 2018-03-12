@@ -1,0 +1,2 @@
+1.add function search book
+2.add book detail page

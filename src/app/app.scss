@@ -1,0 +1,110 @@
+
+.tabs-md-primary .tab-button, .tabs-md-primary .tab-button-icon {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.align-center {
+  text-align: center;
+}
+
+.highlight {
+  background-color: #f4f4f4;
+}
+
+.center {
+  display: block;
+  margin: 0 auto;
+}
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.top-radius {
+  border-radius: 10% 10% 0 0;
+}
+
+.bottom-radius {
+  border-radius: 0 0 10% 10%;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+.transparent-header {
+  // This is just to make the header transparent and button/icon with white color
+  .toolbar-content,
+  .back-button {
+    color: white;
+  }
+  .toolbar-background,
+  ion-navbar,
+  ion-header {
+    background: transparent !important;
+    background-color: transparent !important;
+  //  background-image: url('../img/material-design-background.jpg');
+   // background-image: url('../img/bgums.jpg');
+  }
+  .header-md::after,
+  .toolbar-background-ios {
+    background-image: none;
+    border-bottom: 0;
+  }
+  .header-ios .toolbar-background-ios,
+  .footer-ios .toolbar-background-ios {
+    border: 0;
+  }
+  // ---
+}
+
+
+// Material Design Sidemenu
+#menu-material {
+  .menu-header {
+    padding: 5px 15px;
+   // background-image: url('../img/material-design-background.jpg');
+     background-image: url('../img/bgums.jpg');
+    background-size: cover;
+    //color: white;
+    .name {
+      font-weight: 900;
+      margin-bottom: 3px;
+      color: white; 
+   letter-spacing: 0px;  
+   background: rgb(0, 0, 0);
+    }
+    .e-mail {
+      margin-top: 0;
+      margin-bottom: 5px;
+      color: white; 
+   letter-spacing: 0px;  
+   background: rgb(0, 0, 0);
+    }
+  }
+  .user-avatar {
+    padding: .5em;
+    height: 12vh;
+    border-radius: 100px;
+  }
+  h3,
+  .label,
+  {
+    color: #999;
+    font-weight: 400;
+  }
+  ion-icon {
+    color: #777;
+  }
+  p span { 
+
+    font-weight: 900;
+   color: white; 
+   letter-spacing: 0px;  
+   background: rgba(0, 0, 0, 0.7); /* fallback color */
+  // background: rgba(0, 0, 0, 0.7);
+   padding: 4px; 
+}
+}

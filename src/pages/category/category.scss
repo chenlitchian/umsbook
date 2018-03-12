@@ -1,0 +1,88 @@
+
+
+
+
+.ios, .md {
+ 
+    page-category {
+ 
+
+ .searchbar-md .searchbar-input {
+    padding-right: 0px;
+}
+.bar-buttons-md[end] {
+ 
+    margin: 1%;
+}
+ion-select{
+    max-width: 100%;
+}
+
+ion-item {
+            width: 98%;
+            margin: 1%;
+            padding-left: 10px !important;
+           // margin-bottom: 10px;
+            background-color: #fff;
+            opacity: 1.0;
+            font-size: 0.9em;
+            transition: 0.2s linear;
+        }
+ 
+.col {
+    padding: 4px;
+}    
+
+
+
+.categorysort{
+    background-color: #438891;
+}
+    
+.image { 
+  // position: relative; 
+   width: 100%; 
+   padding: 0px;
+    margin: auto; 
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 0px;
+    margin-right: 0px;
+    display: block;
+}
+
+
+.image h2{ 
+   position: absolute; 
+   top: 90%; 
+   left: 0; 
+   width: 100%;
+}
+
+.image h3{ 
+   position: absolute; 
+   top: 0%; 
+   left: 0; 
+   width: 100%;
+}
+h3 span { 
+
+   color: white; 
+   letter-spacing: 0px;  
+   background: rgb(0, 0, 0); /* fallback color */
+  // background: rgba(0, 0, 0, 0.7);
+   padding: 2px; 
+}
+h2 span { 
+   color: white; 
+   font: bold 10px; 
+   letter-spacing: 0px;  
+   background: rgb(0, 0, 139); /* fallback color */
+  // background: rgba(0, 0, 0, 0.7);
+   padding: 2px; 
+}
+
+
+}
+
+}

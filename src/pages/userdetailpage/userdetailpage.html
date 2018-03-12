@@ -1,0 +1,79 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>User Profile</ion-title>
+
+	<ion-buttons end>
+      <button ion-button icon-only (click)="redirectToHomePage()">
+        	<ion-icon name="settings"></ion-icon>
+  		</button>
+	</ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+<ion-row class="header">
+    <ion-col width-50>
+        <img class="img-center" src="{{userPhotoUrl}}" style="border-radius: 50px; height:100px; width: 100px;" on-tap="presentActionSheet()"/>
+    </ion-col>
+    
+		<ion-col width-50 class="button-container">
+       <ion-row class="row row-50"> 
+        <button ion-button block round class="icons" (click) ="presentActionSheet()">
+          <ion-icon name="camera"></ion-icon>
+        </button>
+       </ion-row>
+			 <ion-row class="row row-50">
+        <button ion-button block round outline class="icons" (click) ="openModal()">
+          Edit Profile
+        </button>
+			 </ion-row>
+    </ion-col>
+</ion-row>
+
+
+<ion-card>
+	<ion-card-header text-uppercase>
+		   My details 
+	</ion-card-header>
+	
+	 <ion-list>
+
+		 <ion-item text-wrap>
+
+	 		 <ion-icon name="person" item-left></ion-icon>{{userDisplayName}}
+	 	</ion-item>
+
+	 	<ion-item text-wrap>
+	 		 <ion-icon name="mail" item-left></ion-icon>{{userEmail}}
+	 	</ion-item>
+	 
+	 	<ion-item text-wrap>
+	 		 <ion-icon name="call" item-left></ion-icon>{{userContact}}
+	 	</ion-item>
+	  
+	 	<ion-item text-wrap>
+	 		 <ion-icon name="school" item-left></ion-icon>{{userSchool}} 
+	 	</ion-item>
+
+	 </ion-list>
+</ion-card>
+
+
+<ion-fab right bottom>
+    <button ion-fab color="secondary"><ion-icon name="create"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button ion-fab color="primary" (click) ="openModal()"><ion-icon name="create"></ion-icon></button>
+      <button ion-fab color="secondary" (click) ="presentActionSheet()"><ion-icon name="images"></ion-icon></button>
+      <button ion-fab color="danger" (click) = "removeAccount()"><ion-icon name="trash"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>
+
