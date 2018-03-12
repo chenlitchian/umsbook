@@ -12,7 +12,7 @@ email: ryan@gmail.com
 password: 000000
 
 
-<img src="https://github.com/chenlitchian/umsbook/master/screenshot/usecase.png" width="100">
+<img src="https://github.com/chenlitchian/umsbook/blob/master/screenshot/usecase.png" width="100">
 ![Optional Text](../master/screenshot/usecase.png){width="100px"}
 ![Optional Text](../master/screenshot/login.png)
 ![Optional Text](../master/screenshot/home.png)
