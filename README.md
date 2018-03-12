@@ -31,3 +31,7 @@ Screenshot of Umsbook App
 
 <img src="https://github.com/chenlitchian/umsbook/blob/master/screenshot/add.png" width="300">
 
+## Built With
+
+* [Ionic 2]- The hybrid app framework used
+* [Firebase] - Backend
